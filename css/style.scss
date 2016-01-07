@@ -1,0 +1,80 @@
+@import "import.scss";
+*{
+  margin: 0;
+  padding: 0;
+  font-size: $fontSize;
+}
+body{
+  background: radial-gradient(70% 90% , #ffffff, #afcaff, #8ee4ff, #a178f5, #32acff);
+}
+
+.content{
+  margin: 0 auto;
+  width: $globalWidth;
+  height: 100%;
+}
+.content__header{
+  margin: 250px auto;
+  width: ($globalWidth)-400;
+  height: 180px;
+  background:linear-gradient(to bottom, #8d09dc,#ffffff);
+  box-shadow: 12px 12px 10px #686868;
+}
+.header__left-block{
+  @include block();
+}
+.header__middle-block{
+  @include block(left,32%);
+}
+.header__right-block{
+  @include block(right,30%);
+}
+.header__img{
+  border-radius: 50%;
+  position: relative;
+  top:-40px;
+  box-shadow: 10px 10px 10px #686868; ;
+}
+.menu__list{
+  @include list;
+}
+.link__href{
+  @include href;
+  font-size: ($fontSize)-1;
+}
+.list__link_about{
+  @include round(45px,45px);
+  top:-370px;
+  right:-130px;
+}
+.list__link_edu{
+  @include round(65px,65px);
+  top:-380px;
+}
+.list__link_skill{
+  @include round(40px,40px);
+  right:-100px;
+  top:-165px;
+}
+.list__link_contact{
+  @include round(50px,50px);
+  top:-270px;
+}
+.list__link_certific{
+  @include round(68px,68px);
+  left:-70px;
+  top:-400px;
+}
+.right-block__item{
+  margin-top: 10px;
+  border: 1px solid grey;
+  padding: 5px;
+  box-shadow: 1px 2px 5px #848484;
+
+}
+.item__sign{
+ color: #383838;
+}
+.txt__href{
+@include href($color:#ffffff)
+}
