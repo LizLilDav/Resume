@@ -1,0 +1,71 @@
+$colorGreen:#48c0ff;
+$colorWhite:#ffffff;
+$colorGrey:#848484;
+$globalWidth:1200px;
+$fontSize:15px;
+$borderRound:6px solid #32ACFF;
+
+
+
+@mixin block($float:left,$width:30%){
+  float:$float;
+  width:$width;
+  padding: 20px 10px 20px 10px;
+  color:$colorWhite ;
+
+}
+@mixin list{
+  list-style-type: none;
+}
+@mixin href($color:darken($colorGrey,20%)) {
+  text-decoration: none;
+  color:$color;
+  font-weight: bold;
+  display: block;
+  &:hover{
+    opacity: 0.7;
+  }
+}
+@mixin round($width:70px,$height:70px,$back:#e0e0e0){
+  width: $width;
+  height: $height;
+  border-radius:50%;
+  border:$borderRound;
+  background:$back ;
+  text-align: center;
+  line-height: $height;
+  position: relative;
+  float: left;
+  box-shadow: 7px 7px 10px darken($colorGrey,25%);
+  &:hover{
+    width:($width)+8;
+    height:($height)+8;
+  }
+}
+@mixin letter($color:darken($colorGrey,25%),$top:-20px){
+  font-size: ($fontSize)*6;
+  font-weight: bold;
+  color:$color;
+  position: relative;
+  top:$top;
+  text-shadow: 7px 7px 7px darken($colorGrey,25%);
+}
+@mixin informBlock($width:35%,$height:100px){
+  width:$width;
+  height:$height;
+  box-shadow: 11px 11px 10px darken($colorGrey,25%);
+  border-radius: 40%;
+  text-align: center;
+}
+@mixin informBlockProp($back:linear-gradient(to bottom,$colorGrey,$colorWhite),$float:left){
+  background: $back;
+  float:$float;
+}
+@mixin txt($line:35px,$size:($fontSize)+4,$color:darken($colorGrey,30%)){
+  font-size: $size;
+  line-height: $line;
+  display: block;
+  color:$color;
+  text-shadow: 7px 7px 7px darken($colorGrey,25%);
+  padding-top:10px;
+}

@@ -5,23 +5,31 @@
   font-size: $fontSize;
 }
 body{
-  background: radial-gradient(70% 90% , #ffffff, #afcaff, #8ee4ff, #a178f5, #32acff);
+  background: radial-gradient(70% 90% , $colorWhite, #afcaff, #8ee4ff, #a178f5, #32acff);
 }
-
 .content{
   margin: 0 auto;
   width: $globalWidth;
   height: 100%;
+  padding:245px 0;
+}
+.clear{
+  clear:both;
 }
 .content__header{
-  margin: 250px auto;
+  margin: 0 auto;
   width: ($globalWidth)-400;
-  height: 180px;
-  background:linear-gradient(to bottom, #8d09dc,#ffffff);
+  height: 230px;
+  background:linear-gradient(to bottom, #8d09dc,$colorWhite);
   box-shadow: 12px 12px 10px #686868;
 }
 .header__left-block{
   @include block();
+}
+.head__href{
+  font-size: ($fontSize)*2.3;
+  font-weight: bold;
+  @include href($colorWhite);
 }
 .header__middle-block{
   @include block(left,32%);
@@ -33,7 +41,8 @@ body{
   border-radius: 50%;
   position: relative;
   top:-40px;
-  box-shadow: 10px 10px 10px #686868; ;
+  box-shadow: 10px 10px 10px #686868;
+  border: $borderRound;
 }
 .menu__list{
   @include list;
@@ -44,37 +53,141 @@ body{
 }
 .list__link_about{
   @include round(45px,45px);
-  top:-370px;
-  right:-130px;
+  top:-350px;
+
 }
 .list__link_edu{
   @include round(65px,65px);
-  top:-380px;
+  top:-230px;
+  left:-100px;
 }
 .list__link_skill{
   @include round(40px,40px);
-  right:-100px;
-  top:-165px;
+  top:-20px;
 }
-.list__link_contact{
+.list__link_career{
   @include round(50px,50px);
-  top:-270px;
+  top:-350px;
 }
 .list__link_certific{
   @include round(68px,68px);
-  left:-70px;
-  top:-400px;
+  top:-120px;
+  left:-110px;
+
 }
 .right-block__item{
   margin-top: 10px;
-  border: 1px solid grey;
+  border: 1px solid $colorGrey;
   padding: 5px;
-  box-shadow: 1px 2px 5px #848484;
-
+  box-shadow: 1px 2px 5px $colorGrey;
 }
 .item__sign{
- color: #383838;
+ color: darken($colorGrey,30%);
 }
 .txt__href{
 @include href($color:#ffffff)
+}
+.item__social-list{
+  @include list;
+}
+.social-list__link-social{
+  float: left;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  background:darken($colorGrey,12%);
+  line-height: 30px;
+  text-align: center;
+  margin-right: 20px;
+}
+.right-block__item_plugin{
+  height: 30px;
+}
+.link-social__href{
+  @include href($color:#ffffff);
+
+}
+                                                       /*page about*/
+.about-content{
+  padding: 100px 0;
+  width: $globalWidth;
+}
+.header-about{
+  width: 100%;
+}
+.header-about__menu{
+  float:left;
+  position: fixed;
+}
+.list__link_active{
+  background:$colorGreen;
+  border:solid 6px $colorGrey;
+}
+.header-about__about-head{
+  float: left;
+  width: 60%;
+  padding-top:40px;
+  margin-left:400px;
+  margin-bottom: 100px;
+}
+.about-head{
+  text-align: center;
+}
+.word__letter{
+  padding: 0 17px;
+}
+.word__letter_one{
+  @include letter;
+}
+.word__letter_two{
+  @include letter(#c06cdc,10px);
+}
+.word__letter_three{
+   @include letter($colorGreen,20px);
+ }
+.word__letter_four{
+    @include letter($colorGreen,30px);
+  }
+.word__letter_five{
+     @include letter($colorGreen,20px);
+    padding-left:25px;
+   }
+.word__letter_six {
+  @include letter(#c06cdc,10px);
+}
+.word__letter_seven{
+    @include letter(#595959,-40px);
+  }
+.about-me__block-about{
+  width: 100%;
+  padding: 0 50px;
+}
+.block-about__item{
+@include informBlock;
+}
+.block-about__item_left {
+  @include informBlockProp;
+  margin-right: 80%;
+  margin-left: 20%;
+  background: transparent;
+}
+
+
+.block-about__item_right{
+  @include informBlockProp(linear-gradient(to bottom,#e66dff,$colorWhite),right);
+}
+.name__txt_top{
+  @include txt;
+  font-weight: bold;
+}
+.name__txt_bottom{
+  @include txt(30px,($fontSize)+5,$colorWhite);
+}
+                                                      /*Education*/
+.edu-block__item{
+@include informBlock(35%,150px);
+}                                                   /*Certificates*/
+.item-cert__img:hover{
+  width:35px;
+  height: 50px;
 }
